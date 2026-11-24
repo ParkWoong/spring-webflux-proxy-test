@@ -40,6 +40,10 @@ mvn spring-boot:run
 
 Start a sample HTTP server on 127.0.0.1:9090, then call http://127.0.0.1:8080/sample. ProxyTest checks that only the configured route exists.
 
+#### Postman API
+
+Start an HTTP server on localhost:9090 with a file named sample containing hello. Then call GET http://localhost:8080/sample with no body. Expected: HTTP 200 with body hello from the upstream server. Requests outside the configured route return HTTP 400.
+
 ## KR
 
 ### 프로젝트 구조
@@ -77,3 +81,7 @@ mvn spring-boot:run
 ```
 
 127.0.0.1:9090에서 샘플 HTTP 서버를 실행하고 http://127.0.0.1:8080/sample을 호출하세요. ProxyTest는 등록된 경로만 존재하는지 확인합니다.
+
+#### Postman API
+
+localhost:9090에서 hello가 담긴 sample 파일을 제공하는 HTTP 서버를 실행하세요. 본문 없이 GET http://localhost:8080/sample을 호출하면 업스트림에서 온 HTTP 200과 본문 hello가 예상됩니다. 등록되지 않은 경로는 HTTP 400을 반환합니다.
